@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Spam Email Detector</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="icon">
+                🛡️
+            </div>
+
+            <h1>Spam Email Detector</h1>
+
+            <p class="subtitle">
+                Detect whether an email or message is spam.
+            </p>
+
+            <div class="input-section">
+
+                <label for="message">
+                    Enter Email / Message
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="Paste your email or message here..."
+                ></textarea>
+
+            </div>
+
+            <button id="predictBtn">
+                Check Message
+            </button>
+
+            <div id="loading" class="loading">
+                Analyzing message...
+            </div>
+
+            <div id="result" class="result">
+            
+                <h2>Prediction Result</h2>
+            
+                <div class="prediction">
+                    <span id="prediction">Spam</span>
+                </div>
+            
+                <div class="probability-container">
+            
+                    <div class="probability-header">
+            
+                        <div>
+                            <span class="label spam-label">
+                                Spam
+                            </span>
+            
+                            <span id="spamPercentage">
+                                0.00%
+                            </span>
+                        </div>
+            
+                        <div>
+                            <span class="label safe-label">
+                                Not Spam
+                            </span>
+            
+                            <span id="notSpamPercentage">
+                                0.00%
+                            </span>
+                        </div>
+            
+                    </div>
+            
+            
+                    <div class="bar-container">
+            
+                        <div id="spamBar" class="spam-bar">
+                        </div>
+            
+                        <div id="notSpamBar" class="not-spam-bar">
+                        </div>
+            
+                    </div>
+            
+                </div>
+            
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
